@@ -1,0 +1,16 @@
+{
+    "name": "DarkSail.Refs",
+    "rootNamespace": "DarkSail.Refs",
+    "references": [
+        "DarkSail.Resettables"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
