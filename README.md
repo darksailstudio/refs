@@ -1,11 +1,12 @@
 # Refs
 
-Unity containers for values and events with change/invoke notifications.
+Unity containers for values and events with change/invoke notifications. Events can be invoked from the inspector.
 
 ## Features
 
 - Value references (`Ref<T>`, `SharedRef<T>`) with change notifications
 - Event references (`EventRef`, `SharedEventRef`) with invoke notifications
+- Custom property drawers for transparent editing and inspector invoke buttons
 
 ## Requirements
 
@@ -24,18 +25,20 @@ Unity containers for values and events with change/invoke notifications.
 
 ### References
 
-Plain C# classes wrapping values (`Ref<T>`) or events (`EventRef`).
+Plain C# classes wrapping values (`Ref<T>`) or events (`EventRef`), with custom property drawers for transparent inspector editing and event wiring.
 
 #### `Ref<T>`
 
 - `Ref(T initialValue)` constructor.
 - `Value { get; set; }` (thread-safe).
 - `Changed` event (raised on `Value` change).
+- Inspector drawer shows only `Value`, raises `Changed` on edit.
 
 #### `EventRef`
 
 - `Invoke()` method.
 - `Invoked` event (raised on `Invoke`).
+- Inspector drawer shows an `Invoke` button.
 
 #### Example
 

@@ -1,7 +1,7 @@
 {
 	"name": "net.darksail.refs",
 	"displayName": "Refs",
-	"description": "Containers for values and events with change/invoke notifications.",
+	"description": "Containers for values and events with change/invoke notifications. Events can be invoked from the inspector.",
 	"version": "0.1.0",
 	"unity": "2022.2",
 	"author": {
