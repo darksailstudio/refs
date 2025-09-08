@@ -2,7 +2,7 @@
 	"name": "net.darksail.refs",
 	"displayName": "Refs",
 	"description": "Containers for values and events with change/invoke notifications, as plain C# objects or asset-backed shared instances. Events can be invoked from the inspector.",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"unity": "2022.2",
 	"author": {
 		"name": "Dark Sail d.o.o.",
