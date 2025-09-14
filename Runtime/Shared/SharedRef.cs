@@ -1,27 +1,13 @@
 #nullable enable
 
-using System;
-using DarkSail.Resettables;
-using UnityEngine;
-
 namespace DarkSail.Refs
 {
-	[ResetOnExitPlayMode]
-	public abstract class SharedRef<T> : ScriptableObject, IRef<T>
+	public abstract class SharedRef<T> : ReadOnlySharedRef<T>, IRef<T>
 	{
-		[SerializeField]
-		Ref<T> valueRef = new Ref<T>(default!);
-
-		public T Value
+		public new T Value
 		{
-			get => valueRef.Value;
+			get => base.Value;
 			set => valueRef.Value = value;
-		}
-
-		public event Action<T>? Changed
-		{
-			add => valueRef.Changed += value;
-			remove => valueRef.Changed -= value;
 		}
 	}
 }

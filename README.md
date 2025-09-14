@@ -61,9 +61,9 @@ Asset-backed references (`SharedRef<T>`, `SharedEventRef`) for sharing state and
 
 Shared references are created via **Assets** → **Create** → **Shared References** → **\[Type\]**.
 
-#### `SharedRef<T>`
+#### `SharedRef<T>` / `ReadOnlySharedRef<T>`
 
-Abstract base for asset-backed values. Same API as [`Ref<T>`](#reft) (except the constructor), but wrapped in a `ScriptableObject` asset.
+Abstract base for asset-backed values. Same API as [`Ref<T>`](#reft) (except the constructor), but wrapped in a `ScriptableObject` asset. Read only variant provides immutable access and preserves encapuslation.
 
 Requires derived types for values due to Unity serialization constraints (assets can't be generic types). Implementations provided for common C# and Unity primitives:
 
@@ -80,9 +80,9 @@ using UnityEngine;
 class MyCustomSharedRef : SharedRef<MySerializableType> {}
 ```
 
-#### `SharedEventRef`
+#### `SharedEventRef` / `ReadOnlySharedEventRef`
 
-Same API as [`EventRef`](#eventref), but wrapped in a `ScriptableObject` asset.
+Same API as [`EventRef`](#eventref), but wrapped in a `ScriptableObject` asset. Read-only variant provides immutable access and preserves encapsulation.
 
 #### Examples
 
@@ -92,7 +92,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-	[SerializeField] SharedIntRef playerHP;
+	[SerializeField] SharedRef<int> playerHP;
 	[SerializeField] SharedEventRef playerDied;
 
 	public void TakeDamage(int damage)
@@ -109,7 +109,7 @@ using UnityEngine;
 
 public class HealthUI : MonoBehaviour
 {
-	[SerializeField] SharedIntRef playerHP;
+	[SerializeField] ReadOnlySharedRef<int> playerHP;
 
 	void OnEnable()
 	{
@@ -135,7 +135,7 @@ using UnityEngine;
 
 public class GameOverUI : MonoBehaviour
 {
-	[SerializeField] SharedEventRef playerDied;
+	[SerializeField] ReadOnlySharedEventRef playerDied;
 
 	void OnEnable()
 	{
