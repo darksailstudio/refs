@@ -16,9 +16,9 @@ Unity containers for values and events with change/invoke notifications, as plai
 
 ## Install
 
-1. In Unity Editor click **Window** → **Package Manager**.
+1. In the Unity Editor, click **Window** → **Package Manager**.
 2. Click **+** (top left) → **Install package from git URL…**.
-3. Enter this repository URL with `.git` suffix and click **Add**:
+3. Enter this repository URL with the `.git` suffix:
 	```
 	https://github.com/darksailstudio/refs.git
 	```
